@@ -1,0 +1,2 @@
+produtos em estoque
+Produto [precoCusto=3.0, precoVenda=5.0, nome=Candida, codigoDeBarras=151524, dataValidade=22/10/2022]

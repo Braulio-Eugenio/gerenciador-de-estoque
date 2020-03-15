@@ -1,15 +1,13 @@
 package br.com.zup.gerenciador.estoque.produtos;
 
-import java.util.Date;
-
 public class Produto {
 	private float precoCusto;
 	private float precoVenda;
 	private String nome;
-	private boolean codigoDeBarras;
-	private Date dataValidade;
+	private int codigoDeBarras;
+	private String dataValidade;
 
-	public Produto(float precoCusto, float precoVenda, String nome, boolean codigoDeBarras, Date dataValidade) {
+	public Produto(float precoCusto, float precoVenda, String nome, int codigoDeBarras, String dataValidade) {
 		super();
 		this.precoCusto = precoCusto;
 		this.precoVenda = precoVenda;
@@ -38,23 +36,38 @@ public class Produto {
 		return nome;
 	}
 
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public boolean isCodigoDeBarras() {
+	public int getCodigoDeBarras() {
 		return codigoDeBarras;
 	}
 
-	public void setCodigoDeBarras(boolean codigoDeBarras) {
+	public void setCodigoDeBarras(int codigoDeBarras) {
 		this.codigoDeBarras = codigoDeBarras;
 	}
 
-	public Date isDataValidade() {
+	public String isDataValidade() {
 		return dataValidade;
 	}
 
-	public void setDataValidade(Date dataValidade) {
+	public void setDataValidade(String dataValidade) {
 		this.dataValidade = dataValidade;
+	}
+
+	public void aumentaPrecoVenda(float porcentagem) {
+		this.precoVenda += precoVenda * porcentagem;
+	}
+	public void diminuiPrecoVenda(float porcentagem) {
+		this.precoVenda -= precoVenda * porcentagem;
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Produto [precoCusto=" + precoCusto + ", precoVenda=" + precoVenda + ", nome=" + nome
+				+ ", codigoDeBarras=" + codigoDeBarras + ", dataValidade=" + dataValidade + "]";
 	}
 }
