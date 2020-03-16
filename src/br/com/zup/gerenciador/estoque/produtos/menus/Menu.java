@@ -2,23 +2,20 @@ package br.com.zup.gerenciador.estoque.produtos.menus;
 
 import java.util.Scanner;
 
-
 import br.com.zup.gerenciador.estoque.mercado.EstoqueLimpeza;
 import br.com.zup.gerenciador.estoque.produtos.Produto;
 
-public class Menu  {
+public class Menu {
 
-	public Menu ()   {
-		
-	}
+	Produto produto = new Produto(0, 0, "", 1, "00/00/0000");
+	EstoqueLimpeza estoque = new EstoqueLimpeza();
 
 	public void menuEstoqueLimpeza() {
 		String opcao = "";
 		do {
-			
+
 			Scanner teclado = new Scanner(System.in);
-			
-			EstoqueLimpeza estoque = new EstoqueLimpeza();
+
 			System.out.println("Você esta no menu Estoque de Limpeza escolha as opcões :");
 			System.out.println("[1] Para cadastrar produto.");
 			System.out.println("[2] Para remover um produto.");
@@ -28,15 +25,12 @@ public class Menu  {
 			System.out.println("[6] Para consultar produtos.");
 			System.out.println("[7] Para consultar a quantidade de produtos.");
 			System.out.println("[8] Para retornar ao menu anterior.");
-			
+
 			switch (opcao) {
 			case "1":
-				//cadatro de produto
 				
-				
-
 			default:
-				
+
 			}
 		} while (null != null);
 
