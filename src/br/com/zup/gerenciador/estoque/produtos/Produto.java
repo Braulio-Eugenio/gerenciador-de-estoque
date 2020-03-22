@@ -58,6 +58,8 @@ public class Produto {
 	}
 
 	public void aumentaPrecoVenda(float porcentagem) {
+		//XXX: Tem algum problema neste cáculo caso o usuário digite 10, 
+		// o resultado vai ser o produto mais ele mesmo X10.
 		this.precoVenda += precoVenda * porcentagem;
 	}
 	public void diminuiPrecoVenda(float porcentagem) {

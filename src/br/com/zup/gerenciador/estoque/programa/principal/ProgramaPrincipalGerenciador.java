@@ -40,6 +40,7 @@ public class ProgramaPrincipalGerenciador extends Menu {
 		int opcao;
 		do {
 			
+			// XXX: A funcionalidade de criação de arquivo foi criada mas não foi utilizada.
 			System.out.println("Você esta no menu Estoque alimenticio escolha as opcões :");
 			System.out.println("[1] Para cadastrar produto.");
 			System.out.println("[2] Para remover um produto.");
@@ -53,9 +54,9 @@ public class ProgramaPrincipalGerenciador extends Menu {
 			switch (opcao) {
 			case 1:
 				cadastraProdutoAlimenticio(estoqueAlimenticio, teclado);
-
 				break;
 			case 2:
+				//TODO: Seria legal exibir pro usuário se a alteração foi feita ou não com sucesso.
 				removeProdutoAlimenticio(estoqueAlimenticio, teclado);
 				break;
 			case 3:
@@ -65,12 +66,14 @@ public class ProgramaPrincipalGerenciador extends Menu {
 				alteraPrecoDeUmProdutoAlimenticio(estoqueAlimenticio, teclado);
 				break;
 			case 5:
+				//XXX: Os produtos são listados mas não são exibidos pro usuário, faltou um SOUT.
 				estoqueAlimenticio.listaProduto();
 				break;
 			case 6:
 				consultaProduto(estoqueAlimenticio, teclado);
 				break;
 			case 7:
+				//XXX: A quantidade não é exibida na tela.
 				estoqueAlimenticio.quantidadeProdutosEmEstoque();
 				break;
 			case 0:
@@ -83,6 +86,7 @@ public class ProgramaPrincipalGerenciador extends Menu {
 	private static void consultaProduto(EstoqueAlimenticio estoqueAlimenticio, Scanner teclado) {
 		System.out.println("Digite o código de barras para consultar o produto");
 		int codigoDeBarras = teclado.nextInt();
+		// XXX: O método consulta o produto mas não o exibe para o usuário.
 		estoqueAlimenticio.consultaProduto(codigoDeBarras);
 	}
 
@@ -98,6 +102,7 @@ public class ProgramaPrincipalGerenciador extends Menu {
 	private static void cadastraProdutoAlimenticio(EstoqueAlimenticio estoqueAlimenticio, Scanner teclado) {
 		System.out.println("Digite o nome do produto: ");
 		String nome = teclado.next();
+		//TODO: Data de quê?
 		System.out.println("Digite a data do produto: ");
 		String dataValidade = teclado.next();
 		System.out.println("Digite o preço de custo:");
@@ -114,8 +119,11 @@ public class ProgramaPrincipalGerenciador extends Menu {
 	}
 
 	private static void alteraPrecoDeTodosProdutosAlimenticios(EstoqueAlimenticio estoqueAlimenticio, Scanner teclado) {
+		// XXX: Ao invés de digitar valor não seria legal
+		// digitar a porcentagem? *alterado
 		System.out.println("Digite o valor a ser auterado:");
 		float porcentagem = teclado.nextFloat();
+		// XXX: O valor da variável aumenta deveria ser escolhido pelo usuário.
 		boolean aumenta = true;
 		estoqueAlimenticio.alteraPrecoProdutos(porcentagem, aumenta);
 	}
@@ -133,6 +141,7 @@ public class ProgramaPrincipalGerenciador extends Menu {
 	}
 
 	public static int subMenuLimpeza(EstoqueLimpeza estoqueLimpeza, Scanner teclado) {
+		//XXX: Esse menu não funciona, pq não está como o menu de Produtos A
 		int opcao;
 		System.out.println("Você esta no menu Estoque de Limpeza escolha as opcões :");
 		System.out.println("[1] Para cadastrar produto.");
